@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Puzzle ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#ffdde1;
+  text-align:center;
+}
+.heart{
+  font-size:60px;
+  cursor:pointer;
+  margin:20px;
+}
+.hidden{
+  display:none;
+}
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Tap All Hearts ❤️</h1>
+
+<div id="game">
+  <span class="heart" onclick="tap(this)">❤️</span>
+  <span class="heart" onclick="tap(this)">❤️</span>
+  <span class="heart" onclick="tap(this)">❤️</span>
+</div>
+
+<p id="done" class="hidden">
+You completed my heart 💖
+</p>
+
+<button id="nextBtn" class="hidden"
+ onclick="location.href='ring.html'">
+Next 💍
+</button>
+
+<script>
+let count=0;
+function tap(el){
+  el.style.opacity="0.3";
+  el.onclick=null;
+  count++;
+  if(count==3){
+    document.getElementById("done").classList.remove("hidden");
+    document.getElementById("nextBtn").classList.remove("hidden");
+  }
+}
+</script>
+
+</body>
+</html>
